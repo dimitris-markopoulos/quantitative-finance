@@ -16,26 +16,58 @@
     }
     .table-frame {
       width: 350px;
-      height: 500px;
+      height: 530px;
     }
     .chart-frame {
       flex: 1; 
-      height: 500px; 
+      height: 530px; 
     }
   </style>
 </head>
 <body>
+
+  <!-- SECTION 1 -->
   <h1>Raw Data Visualization</h1>
   <div class="row">
     <iframe class="frame table-frame" src="html_files/truncated_table.html"></iframe>
     <iframe class="frame chart-frame" src="html_files/XRT_timeseries.html"></iframe>
   </div>
 
+  <!-- SECTION 2 -->
   <h1>Deviation Scatter</h1>
   <iframe class="frame" src="html_files/forward_returns_vs_deviation.html" 
-          width="1000" height="500"></iframe>
+          width="1000" height="530"></iframe>
+    <p style="font-size:14px; color:gray;">
+      Comment: The data appears clustered at mean 0 across deviations and the tails are sparse so modeling them is tricky. 
+    </p>
 
   <iframe class="frame" src="html_files/hitrate.html" 
-          width="1500" height="500"></iframe>
+          width="1500" height="530"></iframe>
+        
+
+  <!-- SECTION 3 -->
+  <h1>Deviation Backtest</h1>
+  <iframe class="frame" src="html_files/signal_window.html" 
+          width="1500" height="600"></iframe>
+    <p style="font-size:14px; color:gray;">
+      Comment: Use the slider below the chart to zoom in on specific signals. 
+    </p>
+  <iframe class="frame" src="html_files/endpoint_distribution.html" 
+          width="1500" height="525"></iframe>
+    <p style="font-size:14px; color:gray;">
+      Comment: Across the 18 signals, 11 finished positive at +60 days (~60% hit rate), suggesting limited predictive edge given the Sharpe distribution
+    </p>
+  <iframe class="frame" src="html_files/return_path_after_signal.html" 
+          width="1500" height="600"></iframe>
+
+  <div class="row">
+    <iframe class="frame table-frame" src="html_files/sharpe_df.html"></iframe>
+    <iframe class="frame chart-frame" src="html_files/sharpe_plot.html"></iframe>
+  </div>
+
+  <p style="font-size:14px; color:gray;">
+    Comment: The sharpe ratios across signals are inconsistent; cannot confirm alpha. 
+  </p>
+
 </body>
 </html>
