@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embedded Forward Returns Plot</title>
+  <style>
+    .row {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .frame {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    .table-frame {
+      width: 350px;
+      height: 500px;
+    }
+    .chart-frame {
+      flex: 1; 
+      height: 500px; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Raw Data Visualization</h1>
+  <div class="row">
+    <iframe class="frame table-frame" src="html_files/truncated_table.html"></iframe>
+    <iframe class="frame chart-frame" src="html_files/XRT_timeseries.html"></iframe>
+  </div>
+
+  <h1>Deviation Scatter</h1>
+  <iframe class="frame" src="html_files/forward_returns_vs_deviation.html" 
+          width="1000" height="500"></iframe>
+
+  <iframe class="frame" src="html_files/hitrate.html" 
+          width="1500" height="500"></iframe>
+</body>
+</html>
