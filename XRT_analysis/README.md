@@ -1,4 +1,3 @@
-## Case Study Report
-You can view the full interactive HTML report here:
+- ## Case Study Report
+[View the interactive report](https://<username>.github.io/<repo-name>/html_files/report.html)
 
-- [Report (report.html)](./report.html)
