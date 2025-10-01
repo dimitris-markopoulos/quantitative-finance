@@ -69,5 +69,38 @@
     Comment: The sharpe ratios across signals are inconsistent; cannot confirm alpha. 
   </p>
 
+   <!-- SECTION 4 -->
+   <h1>Trading Strategy With BVOL Data</h1>
+   <div class="row">
+     <iframe class="frame chart-frame" src="html_files/bvol_signal_plot.html"></iframe>
+   </div>
+
+   <p style="font-size:14px; color:gray;">
+    <iframe class="frame" src="html_files/bvol_summary_stats.html"
+    width="1500" height="100"></iframe>
+    Comment: The strategy does not allow multiple trades at once; signals are washed out for the duration of the holding period. A long entry occurs when the calm-vol regime begins, defined as the short BVOL moving average crossing below the long BVOL moving average after being in the opposite regime the prior day. A short entry occurs when the rising-vol regime begins, defined as the short BVOL moving average crossing above the long BVOL moving average after being in the opposite regime the prior day.
+  </p>
+
+  <!-- SECTION 5 -->
+  <iframe class="frame" src="html_files/bvol_final_returns.html"
+          width="1500" height="525"></iframe>
+  
+  <p style="font-size:14px; color:gray;">
+    Comment: Results are not great - no alpha in the strategy. Signals are inconsistent.
+  </p>
+
+  <!-- SECTION 6 -->
+  <h1>Stop Loss Optimization<br><sup>Impact of Stop-Loss on Strategy Performance</sup></h1>
+  <iframe class="frame" src="html_files/stop_loss_plots/perc3_stoploss.html"
+          width="1500" height="625"></iframe>
+  <iframe class="frame" src="html_files/stop_loss_plots/perc5_stoploss.html"
+          width="1500" height="625"></iframe>
+  <iframe class="frame" src="html_files/stop_loss_plots/perc10_stoploss.html"
+          width="1500" height="625"></iframe>
+  
+  <p style="font-size:14px; color:gray;">
+    Comment: The stop loss (hyperparameter) can be tuned with simple grid search optimization on mean return and sharpe. The optimization results show that a stop-loss does improve the sharpe but the returns are still negligible indicating this strategy does not yield true alpha. It is probable that once neutralized for factor risk this strategy becomes even worse. Once again note - the sharpe is calculated on the distribution at the end returns since this is an exploration of the strategy we do not have any allocation or calculate overall PnL vector.
+  </p>
+
 </body>
 </html>
